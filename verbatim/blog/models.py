@@ -35,13 +35,3 @@ class Comment(models.Model):
 
     def __str__(self):
         return 'Comment {} by {}'.format(self.body, self.name)
-
-# FileField and ImageField
-# Django models for user uploads
-# ImageField is a specialized version of FileField that uses Pillow to confirm that a file is an image
-class Image(models.Model):
-    title = models.CharField(max_length=200)
-    image = models.ImageField(upload_to='images')
-
-    def __str__(self):
-        return self.title
