@@ -23,7 +23,7 @@
             <div class=" col-md-8 col-md-10 mx-auto">
                 <div class="site-heading">
                     {% load static %} <img src="{% static 'images/Verbatim_logo_small.png' %}"  alt="Verbatim logo">
-                    <h3 class="site-heading my-4 mt-3 text-white"> Welcome to VERBATIM</h3>
+                    <!-- <h3 class="site-heading my-4 mt-3 text-white"> Welcome to VERBATIM</h3> -->
                     <p class="text-light">**Please note that these posts contain original, personal and unedited content. They may contain profanity, sex, and triggering language.**
                     </p>
                 </div>
@@ -41,7 +41,10 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <p class="card-text">{{post.content|slice:":200" }}</p>
+                    <!-- line of code below limits how much of each blog post is shown on index page -->
+                    <!-- <p class="card-text">{{post.content|slice:":200" }}</p> -->
+                    <!-- code below required for html to be interpreted properly -->
+                    <p class="card-text">{{post.content|safe }}</p>
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
