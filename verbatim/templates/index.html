@@ -41,10 +41,10 @@
                 <div class="card-body">
                     <h2 class="card-title">{{ post.title }}</h2>
                     <p class="card-text text-muted h6">{{ post.author }} | {{ post.created_on}} </p>
-                    <!-- line of code below limits how much of each blog post is shown on index page -->
-                    <!-- <p class="card-text">{{post.content|slice:":200" }}</p> -->
+                   
                     <!-- code below required for html to be interpreted properly -->
-                    <p class="card-text">{{post.content|safe }}</p>
+                    <p class="card-text">{{ post.content|safe }} {{post.content|slice:":200" }}</p>
+                    <!-- <p class="card-text">{{post.content|safe }}</p> -->
                     <a href="{% url 'post_detail' post.slug  %}" class="btn btn-primary">Read More &rarr;</a>
                 </div>
             </div>
