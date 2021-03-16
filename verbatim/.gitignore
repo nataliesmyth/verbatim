@@ -1,4 +1,7 @@
-# Django #
+# Mac
+.DS_Store
+
+#  Django #
 *.log
 *.pot
 *.pyc
