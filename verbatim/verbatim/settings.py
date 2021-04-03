@@ -83,13 +83,19 @@ TEMPLATES = [
 WSGI_APPLICATION = 'verbatim.wsgi.application'
 
 
-# Database
+# Databases: this constant is a dictionary of DB connection info
+    # required by django
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # default is the default DB connection configuration
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'mydb',
+        'USER': 'admin',
+        'PASSWORD': 'mypass',
+        'HOST': 'localhost',
+        'PORT': '',
     }
 }
 
